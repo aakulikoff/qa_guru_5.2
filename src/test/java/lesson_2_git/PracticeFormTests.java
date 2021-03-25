@@ -37,7 +37,7 @@ public class PracticeFormTests {
     void fillFormTest() {
 
         open("https://demoqa.com/automation-practice-form");
-        $(".main-header").shouldHave(Condition.text("Practice Form"));
+        $(".main-header").shouldHave(text("Practice Form"));
         $("#firstName").setValue(firstName);
         $("#lastName").setValue(lastName);
         $("#userEmail").setValue(userEmail);
@@ -71,9 +71,10 @@ public class PracticeFormTests {
         $("#subjectsInput").val(subject).pressEnter();
 //        выборор нужного параметра из всплывающих подсказок №2:
 //        $("#subjectsInput").val(subjectsInput);
-//        $(".subjects-auto-complete__menu-list").$(byText(subjectsInput)).click();
+//        $(".subjects-auto-complete__menu-list").$(byText(subjectsInput)).click(); или $(byText(subjectsInput)).click()
 
         $("#hobbiesWrapper").$(byText(hobby)).click();
+//        $(byText(hobby)).click();
 
 //        загрузка фото из файла #1:
         $("#uploadPicture").uploadFromClasspath("img/" + picture);
@@ -83,7 +84,9 @@ public class PracticeFormTests {
         $("#currentAddress").val(currentAddress);
         $("#state").scrollTo().click();
         $("#stateCity-wrapper").$(byText(state)).click();
+//        $(byText(state)).click();
         $("#city").click();
+//        $(byText(city)).click();
         $("#stateCity-wrapper").$(byText(city)).click();
 
         $("#submit").click();
