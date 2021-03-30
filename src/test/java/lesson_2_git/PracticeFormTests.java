@@ -11,12 +11,6 @@ import static com.codeborne.selenide.Selenide.*;
 
 public class PracticeFormTests {
 
-    @BeforeAll
-    static void setup() {
-        Configuration.startMaximized = true;
-    }
-//    открытие браузера в полном окне
-
     String firstName = "Peter",
             lastName = "The Great",
             userEmail = "russia@rf.ru",
